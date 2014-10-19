@@ -6,7 +6,7 @@
 #include <cstdlib>
 
 using namespace std;
-const unsigned int CAPACITY = 100;
+const unsigned int CAPACITY = 1000;
 
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -23,9 +23,11 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 		case  2:{
 					unsigned int cant;
-					cout << endl <<"Ingrese la cantidad de numeros a manejar: ";
+					cout << endl <<"Ingrese la cantidad de numeros a manejar (menor a 1000): ";
 					cin >> cant;
-
+					while (cant >1000 || cant < 0){
+						cout << "Cantidad invalida por favor ingrese una cantidad entre 0 y 1000";
+					}
 					int *vector;
 					vector = new int[CAPACITY];
 			//		int vector[CAPACITY];
