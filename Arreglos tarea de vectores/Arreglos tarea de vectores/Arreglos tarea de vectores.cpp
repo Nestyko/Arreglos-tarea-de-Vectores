@@ -26,7 +26,9 @@ int _tmain(int argc, _TCHAR* argv[])
 					cout << endl <<"Ingrese la cantidad de numeros a manejar: ";
 					cin >> cant;
 
-					int vector[CAPACITY];
+					int *vector;
+					vector = new int[CAPACITY];
+			//		int vector[CAPACITY];
 
 					for (unsigned int i = 0; i <cant; i++)
 					{
@@ -55,6 +57,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
 					cout << endl << endl << "El numero mayor es: " << vector[i1] << endl;
 
+					delete[] vector;
+					vector = NULL;
 
 					break;
 		}
