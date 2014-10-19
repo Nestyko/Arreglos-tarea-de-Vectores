@@ -6,6 +6,8 @@
 #include <cstdlib>
 
 using namespace std;
+const unsigned int CAPACITY = 100;
+
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -13,7 +15,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	do
 	{
 		unsigned int seleccion;
-		cout << "2. Calcular el mayor valor de una lista de N números";
+		cout << "2. Calcular el mayor valor de una lista de N números" << endl;
 		cout << "Seleccion: ";
 		cin >> seleccion;
 
@@ -21,36 +23,55 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 		case  2:{
 					unsigned int cant;
-					cout << "Ingrese la cantidad de numeros a manejar: ";
+					cout << endl <<"Ingrese la cantidad de numeros a manejar: ";
 					cin >> cant;
 
-					const unsigned int CAPACITY = cant - 1;
 					int vector[CAPACITY];
 
-					for (unsigned int i = 0; i <= CAPACITY; i++)
+					for (unsigned int i = 0; i <cant; i++)
 					{
 						cout << "Ingrese el Valor " << i + 1 << ": ";
 						cin >> vector[i];
 					}
 
-					for (unsigned int i = 0; i <= CAPACITY; i++)
+					for (unsigned int i = 0; i < cant; i++)
 					{
 						cout << "Vector " << i + 1 << " = \t" << vector[i];
 						cout << endl;
 					}
 
+						int i1 = 0, i2 = 1;
+						do
+						{
+							if (vector[i1] < vector[i2])
+							{
+								i1 = i2;
+								i2++;
+							}
+							else{
+								i2++;
+							}
+						} while (i2 < cant);
+
+					cout << endl << endl << "El numero mayor es: " << vector[i1] << endl;
+
+
+					break;
 		}
 		default:{
-					cout << "Seleccion Invalida.";
+					cout << endl <<"Seleccion Invalida.";
 		}
 			break;
 		}
 
-		cout << endl << "Si desea continuar presione 1";
+		cout << endl << "Si desea volver al menu persione 1: \t";
 		int a;
 		cin >> a;
 		if (a == 1){
 			continuar = true;
+		}
+		else{
+			continuar == false;
 		}
 	} while (continuar);
 
