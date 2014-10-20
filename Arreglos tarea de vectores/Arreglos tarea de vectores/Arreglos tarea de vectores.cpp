@@ -1,15 +1,16 @@
 // Arreglos tarea de vectores.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
+//#include "stdafx.h"
 #include <iostream>
 #include <cstdlib>
+//#include <SDKDDKVer.h>
 
 using namespace std;
 const unsigned int CAPACITY = 1000;
 
 
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
 	bool continuar = false;
 	do
@@ -32,8 +33,9 @@ int _tmain(int argc, _TCHAR* argv[])
 					   cout << "Cantidad invalida por favor ingrese una cantidad entre 0 y 1000";
 				   }
 				   //Declarar vector en memoria dinamica
-				   int *vector;
-				   vector = new int[CAPACITY];
+				   //int *vector;
+				   //vector = new int[CAPACITY];
+				   int vector[CAPACITY];
 				   //Llenar el vector
 				   for (unsigned int i = 0; i <cant; i++)
 				   {
@@ -65,6 +67,8 @@ int _tmain(int argc, _TCHAR* argv[])
 					   cout << "Vector " << i + 1 << " = \t" << vector[i];
 					   cout << endl;
 				   }
+				   //delete [] vector;
+				   //vector = NULL;
 				   break;
 		}
 
@@ -79,9 +83,9 @@ int _tmain(int argc, _TCHAR* argv[])
 					}
 
 					//Declarar vector en memoria dinamica
-					int *vector;
-					vector = new int[CAPACITY];
-			//		int vector[CAPACITY];
+					//int *vector;
+					//vector = new int[CAPACITY];
+					int vector[CAPACITY];
 
 					//Llenar el vector
 					for (unsigned int i = 0; i <cant; i++)
@@ -113,8 +117,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
 					cout << endl << endl << "El numero mayor es: " << vector[i1] << endl;
 
-					delete[] vector;
-					vector = NULL;
+					//delete[] vector;
+					//vector = NULL;
 
 					break;
 		}
