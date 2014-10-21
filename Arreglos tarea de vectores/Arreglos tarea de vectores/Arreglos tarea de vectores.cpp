@@ -17,14 +17,14 @@ int main()
 	{
 		unsigned int seleccion;
 		cout << "1. Multiplicar 1 vector por 1 escalar" << endl;
-		cout << "2. Calcular el mayor valor de una lista de N números" << endl;
+		cout << "2. Calcular el mayor valor de una lista de N nï¿½meros" << endl;
 		cout << "Seleccion: ";
 		cin >> seleccion;
 
 		switch (seleccion)
 		{
 		case 1:{
-				   //Pedir el tamaño del vector
+				   //Pedir el tamaï¿½o del vector
 				   unsigned int cant;
 				   cout << endl << "Ingrese la cantidad de numeros a manejar (menor a 1000): ";
 				   cin >> cant;
@@ -33,9 +33,9 @@ int main()
 					   cout << "Cantidad invalida por favor ingrese una cantidad entre 0 y 1000";
 				   }
 				   //Declarar vector en memoria dinamica
-				   //int *vector;
-				   //vector = new int[CAPACITY];
-				   int vector[CAPACITY];
+				   int *vector;
+				   vector = new int[CAPACITY];
+				   //int vector[CAPACITY];
 				   //Llenar el vector
 				   for (unsigned int i = 0; i <cant; i++)
 				   {
@@ -67,13 +67,13 @@ int main()
 					   cout << "Vector " << i + 1 << " = \t" << vector[i];
 					   cout << endl;
 				   }
-				   //delete [] vector;
-				   //vector = NULL;
+				   delete [] vector;
+				   vector = NULL;
 				   break;
 		}
 
 		case  2:{
-					//Pedir el tamaño del vector
+					//Pedir el tamaï¿½o del vector
 					unsigned int cant;
 					cout << endl <<"Ingrese la cantidad de numeros a manejar (menor a 1000): ";
 					cin >> cant;
@@ -83,9 +83,9 @@ int main()
 					}
 
 					//Declarar vector en memoria dinamica
-					//int *vector;
-					//vector = new int[CAPACITY];
-					int vector[CAPACITY];
+					int *vector;
+					vector = new int[CAPACITY];
+					//int vector[CAPACITY];
 
 					//Llenar el vector
 					for (unsigned int i = 0; i <cant; i++)
@@ -117,8 +117,8 @@ int main()
 
 					cout << endl << endl << "El numero mayor es: " << vector[i1] << endl;
 
-					//delete[] vector;
-					//vector = NULL;
+					delete[] vector;
+					vector = NULL;
 
 					break;
 		}
