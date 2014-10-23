@@ -169,6 +169,33 @@ int main()
 				   vector = NULL;
 				   break;
 		}
+		case 4:{
+				   cout << "4. Dada una lista de N números, hallar la suma total de dichos números" << endl;
+				   int *vector;
+				   vector = new int[CAPACITY];
+				   unsigned int cant = 0;
+				   // Pedir la cantidad
+				   validarCantidad(cant);
+				   // Llenar el vector
+				   llenarVector(cant, vector);
+				   int sumatoria = 0;
+
+				   for (unsigned int i = 0; i < cant; i++)
+				   {
+					   sumatoria += vector[i];
+				   }
+
+				   cout << "La sumatoria de los " << cant << " numeros es: " << sumatoria << endl;
+
+
+				   delete[] vector;
+				   vector = NULL;
+				   break;
+		}
+		case 5: {
+
+
+		}
 		default:{
 					cout << endl <<"Seleccion Invalida.";
 		}
