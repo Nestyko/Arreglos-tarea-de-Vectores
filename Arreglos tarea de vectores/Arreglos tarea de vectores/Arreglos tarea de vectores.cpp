@@ -193,8 +193,32 @@ int main()
 				   break;
 		}
 		case 5: {
+					cout << "5. Dada una lista de N números, hallar de forma separada: La suma de los números pares y La suma de los números impares" << endl;
+					int *vector;
+					vector = new int[CAPACITY];
+					unsigned int cant = 0;
+					// Pedir la cantidad
+					validarCantidad(cant);
+					// Llenar el vector
+					llenarVector(cant, vector);
+					int sumatoria_pares = 0, sumatoria_impares = 0;
 
+					for (unsigned int i = 0; i < cant; i++)
+					{
+						if ((vector[i] % 2) == 0){
+							sumatoria_pares += vector[i];
+						}
+						else {
+							sumatoria_impares += vector[i];
+						}
+					}
 
+					cout << "La sumatoria de los numeros pares es: " << sumatoria_pares << endl;
+					cout << "La sumatoria de los numeros impares es: " << sumatoria_impares << endl;
+
+					delete[] vector;
+					vector = NULL;
+					break;
 		}
 		default:{
 					cout << endl <<"Seleccion Invalida.";
