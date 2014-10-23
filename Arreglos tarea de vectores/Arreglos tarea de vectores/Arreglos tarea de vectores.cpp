@@ -1,7 +1,7 @@
 // Arreglos tarea de vectores.cpp : Defines the entry point for the console application.
 //
 
-//#include "stdafx.h"
+#include "stdafx.h"
 #include <iostream>
 #include <cstdlib>
 //#include <SDKDDKVer.h>
@@ -9,6 +9,20 @@
 using namespace std;
 const unsigned int CAPACITY = 1000;
 
+//Declaracion de Funciones
+void llenarVector(unsigned int cant, int vector[]);
+// llenarVector - pide los valores uno por uno para rellenar los vectores hasta llegar a una cantidad determinada.
+// cant - cantidad de numeros a pedir para llenar el vector
+//vector[] - vector a rellenar
+
+void validarCantidad(unsigned int &cant);
+// validarCantidad - revisa que la cantidad no sea mayor que la capacidad del vector
+// cant - numero de valores a trabajar con el vector
+
+void imprimirVector(unsigned int , int []);
+// imprimirVector - Imprime una lista con cada numero del vector
+// cant - numero de valores a trabajar con el vector
+//vector[] - vector a imprimir
 
 int main()
 {
@@ -18,6 +32,9 @@ int main()
 		unsigned int seleccion;
 		cout << "1. Multiplicar 1 vector por 1 escalar" << endl;
 		cout << "2. Calcular el mayor valor de una lista de N n�meros" << endl;
+		cout << "3. Dada una lista de N números, averiguar cuales de ellos son múltiplos de un número K " << endl;
+		cout << "4. Dada una lista de N números, hallar la suma total de dichos números" << endl;
+		cout << "5. Dada una lista de N números, hallar de forma separada: La suma de los números pares y La suma de los números impares" << endl;
 		cout << "Seleccion: ";
 		cin >> seleccion;
 
@@ -122,6 +139,36 @@ int main()
 
 					break;
 		}
+		case 3:{
+				   cout << "3. Dada una lista de N números, averiguar cuales de ellos son múltiplos de un número K " << endl;
+				   int *vector;
+				   vector = new int[CAPACITY];
+				   unsigned int cant = 0;
+				   int k = 0;
+
+				   // Pedir la cantidad
+				   validarCantidad(cant);
+				   // Llenar el vector
+				   llenarVector(cant, vector);
+
+				   cout << "Ingrese el escalar: ";
+				   cin >> k;
+
+				   cout << "Los valores multiplos de " << k << " son: ";
+				   for (unsigned int  i = 0; i < cant; i++)
+				   {
+					   if ((vector[i] % k) == 0){
+						   cout << vector[i] << ", " ;
+					   }
+				   }
+				   cout << endl;
+
+
+
+				   delete[] vector;
+				   vector = NULL;
+				   break;
+		}
 		default:{
 					cout << endl <<"Seleccion Invalida.";
 		}
@@ -144,3 +191,36 @@ int main()
 	return 0;
 }
 
+
+//Definicion de Funciones
+void llenarVector(unsigned int cant, int vector[]){
+	for (unsigned int i = 0; i <cant; i++)
+	{
+		cout << "Ingrese el Valor " << i + 1 << ": ";
+		cin >> vector[i];
+	}
+}
+
+void validarCantidad(unsigned int &cant){
+	cout << "Ingrese la cantidad de numeros a trabajar: ";
+	cin >> cant;
+	while (cant > CAPACITY || cant < 0){
+		if (cant > CAPACITY){
+			cout << "la cantidad excede 1000, por favor ingrese una cantidad menor: ";
+			cin >> cant;
+		}
+		if (cant < 0){
+			cout << "La catidad es negativa por favor ingrese una positiva: ";
+			cin >> cant;
+		}
+	}
+	}
+
+void imprimirVector(unsigned int cant, int vector[]){
+	for (unsigned int i = 0; i < cant; i++)
+	{
+		cout << "Vector " << i + 1 << " = \t" << vector[i];
+		cout << endl;
+	}
+
+}
