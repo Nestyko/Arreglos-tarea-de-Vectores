@@ -1,6 +1,7 @@
 // Arreglos tarea de vectores.cpp : Defines the entry point for the console application.
 //
 
+//Para que corra en Dev C++ hay q quitar la linea de abajo - #include "stdafx.h"
 #include "stdafx.h"
 #include <iostream>
 #include <cstdlib>
