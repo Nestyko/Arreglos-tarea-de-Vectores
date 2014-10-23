@@ -133,6 +133,15 @@ int main()
 								i2++;
 							}
 						} while (i2 < cant);
+						
+						//Otro metodo
+					/*for (usnigned int i= 0; i< cant;i++){
+                        			if (vector[i] > m ){
+                                	 m = vector[i];
+                                	 }
+                			 }
+                        		cout << "El numero mayor es: " << m << endl;
+                        		*/
 
 					cout << endl << endl << "El numero mayor es: " << vector[i1] << endl;
 
